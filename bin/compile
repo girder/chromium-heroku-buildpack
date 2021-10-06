@@ -85,7 +85,7 @@ topic "Downloading chromium (revision $CHROMIUM_REVISION)"
 curl "https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/$CHROMIUM_REVISION/chrome-linux.zip" --output "$BUILD_DIR/chrome-linux.zip" | indent
 
 topic "Extracting chromium zip"
-unzip "$BUILD_DIR/chrome-linux.zip" | indent
+unzip "$BUILD_DIR/chrome-linux.zip" -d "$BUILD_DIR/" | indent
 rm "$BUILD_DIR/chrome-linux.zip"
 
 topic "Symlinking chromium executable"
