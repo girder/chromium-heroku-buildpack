@@ -19,11 +19,7 @@ function topic() {
 }
 
 function indent() {
-  c='s/^/       /'
-  case $(uname) in
-    Darwin) sed -l "$c";;
-    *)      sed -u "$c";;
-  esac
+  sed -u 's/^/       /'
 }
 
 # Store which STACK we are running on in the cache to bust the cache if it changes
