@@ -89,7 +89,9 @@ unzip "$BUILD_DIR/chrome-linux.zip" -d "$BUILD_DIR/" | indent
 rm "$BUILD_DIR/chrome-linux.zip"
 
 topic "Symlinking chromium executable"
-ln -s "$BUILD_DIR/chrome-linux/chrome" "$BUILD_DIR/chrome-linux/chromium"
+pushd "$BUILD_DIR/chrome-linux"
+ln -s "./chrome" chromium
+popd
 
 topic "Writing profile script"
 mkdir -p $BUILD_DIR/.profile.d
